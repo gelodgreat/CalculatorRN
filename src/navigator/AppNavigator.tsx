@@ -9,7 +9,11 @@ const AppStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeContainer} />
+        <Stack.Screen
+          name="Home"
+          component={HomeContainer}
+          options={{title: ''}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

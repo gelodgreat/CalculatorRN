@@ -4,8 +4,11 @@ import HomeScreen from './Home.screen';
 
 const HomeContainer = (props: HomeProps) => {
   const {} = props;
-
-  const generatedProps: HomePrivateProps = {};
+  const [isRomanNumeral, setIsRomanNumeral] = useState(false);
+  const generatedProps: HomePrivateProps = {
+    isRomanNumeral,
+    setIsRomanNumeral
+  }
   return <HomeScreen {...props} {...generatedProps} />;
 };
 
