@@ -8,7 +8,6 @@ export const Container = styled.View`
 
 export const NumButton = styled(Button)`
   border-radius: 8px;
-  height: 80px;
   text-align: center;
 `;
 
