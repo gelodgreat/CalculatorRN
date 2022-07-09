@@ -8,29 +8,36 @@ const HomeContainer = (props: HomeProps) => {
   const [isRomanNumeral, setIsRomanNumeral] = useState(false);
   const [numInput, setNumInput] = useState('');
   const calculate = () => {
-    if (isRomanNumeral) {
-      const result = numInput
-        .replace(/\b[V]\b/g, '5')
-        .replace(/[A-Z]{2,}/g, toArabic);
-      const arabicComputation = eval(result.replace(/[^-()\d/*+.]/g, ''));
-      setNumInput(convertToRoman(arabicComputation));
-    } else {
-      const result = eval(numInput.replace(/[^-()\d/*+.]/g, ''));
-      setNumInput(result.toString());
-    }
-  };
-
-  useEffect(() => {
-    if (numInput.length > 0) {
+    try {
       if (isRomanNumeral) {
-        const result = numInput.replace(/[0-9]/g, toRoman);
-        setNumInput(result);
-      } else {
         const result = numInput
           .replace(/\b[V]\b/g, '5')
           .replace(/[A-Z]{2,}/g, toArabic);
-        setNumInput(result);
+        const arabicComputation = eval(result.replace(/[^-()\d/*+.]/g, ''));
+        setNumInput(convertToRoman(arabicComputation));
+      } else {
+        const result = eval(numInput.replace(/[^-()\d/*+.]/g, ''));
+        setNumInput(result.toString());
       }
+    } catch (error) {
+      setNumInput('');
+    }
+  };
+  useEffect(() => {
+    try {
+      if (numInput.length > 0) {
+        if (isRomanNumeral) {
+          const arabicComputation = eval(numInput.replace(/[^-()\d/*+.]/g, ''));
+          setNumInput(convertToRoman(arabicComputation));
+        } else {
+          const result = numInput
+            .replace(/\b[V]\b/g, '5')
+            .replace(/[A-Z]{2,}/g, toArabic);
+          setNumInput(result);
+        }
+      }
+    } catch (error) {
+      setNumInput('');
     }
   }, [isRomanNumeral]);
 

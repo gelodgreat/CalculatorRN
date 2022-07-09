@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {View} from 'react-native';
+import React from 'react';
 import {Switch, Text} from 'react-native-paper';
 import {HomeProps} from './Home.props';
 import {Container, InputCalculate, NumButton, Row, RowNum} from './Home.style';
-import {convertRomanToInt, convertToRoman} from './Home.transform';
+import {convertToRoman} from './Home.transform';
 
 const HomeScreen = (props: HomeProps) => {
   const {isRomanNumeral, setIsRomanNumeral, calculate, numInput, setNumInput} =
