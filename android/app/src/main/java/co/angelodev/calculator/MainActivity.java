@@ -1,4 +1,4 @@
-package com.calculatorrn;
+package co.angelodev.calculator;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
