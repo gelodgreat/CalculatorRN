@@ -7,6 +7,7 @@ How to run:
 3. yarn ios or yarn android
 
 
+Google Play Store Link: https://play.google.com/store/apps/details?id=co.angelodev.calculator
+
 Note: 
-* There are some bugs on converting V, handled most of the issue but sometimes there are issues when transforming the whole computation
-* I do like to input all the possible computation as far as possible so I choose to opt on showing the formula everytime you add computation symbols instead of computing it agains immediately, that would be much more simpler lol
+* UI will be updated in the future
